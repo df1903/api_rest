@@ -1,0 +1,31 @@
+{
+  "name": "academic_api",
+  "version": "1.0.0",
+  "description": "Academic api for students and teachers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/df1903/api_rest.git"
+  },
+  "keywords": [
+    "academic",
+    "rest",
+    "api",
+    "teacher",
+    "student",
+    "course"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/df1903/api_rest/issues"
+  },
+  "homepage": "https://github.com/df1903/api_rest#readme",
+  "dependencies": {
+    "config": "^3.3.9",
+    "mongoose": "^6.9.1"
+  }
+}
