@@ -11,12 +11,12 @@ exports.createStudent = (req, res, next) => {
     let std = {
         code: req.body.code,
         name: req.body.name,
-        lastName: req.body.lastName,
+        lastname: req.body.lastname,
         email: req.body.email,
         phone: req.body.phone,
         career: req.body.career
     };
-    studentDto.save(std, (err, data) => {
+    studentDto.create(std, (err, data) => {
         if(err){
             return res.status(400).json(
                 {
@@ -27,19 +27,22 @@ exports.createStudent = (req, res, next) => {
         let r = config.get("roles").student;
         let user = {
             name: std.name,
-            lastName: std.lastName,
+            lastname: std.lastname,
             username: std.code,
-            password: helper.encryptPassword(req.body.password),
+            password: helper.EncryptPassword(req.body.password),
             role: r
 
         };
-        userDto.save(user, (err, u) => {
+        userDto.create(user, (err, u) => {
             if(err){
-                return res.status(400).json(
+                studentDto.delete({_id: data._id}, (e, data) => {
+                    return res.status(400).json(
                     {
                         error:err
                     }
                 );
+                })
+                
             }
             notHelper.sendSMS(std.phone)
             res.status(201).json(
