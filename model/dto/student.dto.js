@@ -1,12 +1,14 @@
 /** package */
-const mongoose = require ("mongoose")
+const mongoose = require("mongoose");
+const db = require("../db-connection/mongodb");
 
 /** using schema */
-const schema = require("../schemas/student.schema")
+const schema = require("../schemas/student.schema");
+db();
 
 schema.statics = {
-    create: function (date, cb){
-        let doc = new this (date);
+    create: function (data, cb){
+        let doc = new this (data);
         doc.save(cb);
     },
     getAll: function (query, cb){

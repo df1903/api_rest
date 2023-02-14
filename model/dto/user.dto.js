@@ -5,8 +5,8 @@ const mongoose = require ("mongoose")
 const schema = require("../schemas/user.schema")
 
 schema.statics = {
-    create: function (date, cb){
-        let doc = new this (date);
+    create: function (data, cb){
+        let doc = new this (data);
         doc.save(cb);
     },
     getAll: function (query, cb){

@@ -1,5 +1,5 @@
 {
-    "db-connection": {
+    "db-connections": {
         "mongodb":{
             "host":"cluster0.yx5asdc.mongodb.net",
             "user":"acad_rest_api_user",

@@ -32,7 +32,7 @@ const teacherSchema = new mongoose.Schema({
         type: "String",
         required: true
     },
-    deparment:{
+    department:{
         type: "String",
         required: true
     }

@@ -1,10 +1,11 @@
 /** Dto */
 const studentDto = require("../../model/dto/student.dto");
 const userDto = require("../../model/dto/user.dto");
-const config = require("config")
+const config = require("config");
 
 /** Helper */
 const helper = require("../helpers/general.helper");
+const notHelper = require("../helpers/notification.helper")
 
 exports.createStudent = (req, res, next) => {
     let std = {
@@ -40,6 +41,7 @@ exports.createStudent = (req, res, next) => {
                     }
                 );
             }
+            notHelper.sendSMS(std.phone)
             res.status(201).json(
                 {
                     info: data
