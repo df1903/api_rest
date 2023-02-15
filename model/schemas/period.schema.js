@@ -11,7 +11,7 @@ const periodSchema = new mongoose.Schema({
         min: 2020,
         max: 2030
     },
-    year:{
+    number:{
         type: "Number",
         required: true,
         min: 1,

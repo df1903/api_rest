@@ -8,7 +8,8 @@
         }
     },
     "secretKeys":{
-        "cryptojs":"XaM7w3@5TAx"
+        "cryptojs":"XaM7w3@5TAx",
+        "jwt": "ABC@2020*"
     },
     "roles":{
         "student": 1,
