@@ -23,7 +23,8 @@ exports.GenerateToken = (user) => {
         exp: Math.floor(Date.now() / 1000) + (60 * 60),
         data: {
             username: user.username,
-            id: user._id
+            id: user._id,
+            role: user.role
         }
     }, secretKey);
     return token;
